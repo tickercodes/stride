@@ -1,0 +1,674 @@
+/* ─── Layout helpers ─────────────────────────────────── */
+
+.wrap {
+	width: 100%;
+	max-width: var(--max);
+	margin: 0 auto;
+	padding-right: max(clamp(1.25rem, 4vw, 4.5rem), env(safe-area-inset-right));
+	padding-left: max(clamp(1.25rem, 4vw, 4.5rem), env(safe-area-inset-left));
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	background: var(--cream);
+}
+
+.header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem 1.5rem;
+	min-height: 4.5rem;
+	padding-top: 0.85rem;
+	padding-bottom: 0.85rem;
+}
+
+.header-brand {
+	display: flex;
+	align-items: center;
+	gap: clamp(0.5rem, 0.8vw, 0.75rem);
+	text-decoration: none;
+	min-width: 0;
+}
+
+.header-mark {
+	width: clamp(28px, 2.4vw, 36px);
+	height: auto;
+	flex-shrink: 0;
+}
+
+.header-brand .brand-name {
+	font-size: clamp(1.35rem, 1.6vw, 1.7rem);
+}
+
+.header-nav {
+	display: flex;
+	align-items: center;
+	gap: clamp(1.15rem, 2.6vw, 2.4rem);
+}
+
+.header-nav a {
+	text-decoration: none;
+	font-size: var(--fs-nav);
+	white-space: nowrap;
+}
+
+.header-nav a:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.header-cta {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	min-width: 0;
+}
+
+.header-note {
+	margin: 0;
+	font-size: 0.78rem;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+/* ─── Buttons ────────────────────────────────────────── */
+
+.btn,
+.btn-ghost {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	min-height: 2.85rem;
+	padding: 0.7rem 1.25rem;
+	border: 1px solid var(--ink);
+	text-decoration: none;
+	font-size: var(--fs-nav);
+	font-weight: 500;
+	line-height: 1;
+	white-space: nowrap;
+	transition:
+		background 0.2s ease,
+		color 0.2s ease,
+		opacity 0.2s ease;
+}
+
+.btn {
+	background: var(--ink);
+	color: var(--cream);
+}
+
+.btn:hover {
+	background: #0f454f;
+}
+
+.btn-ghost {
+	background: transparent;
+}
+
+.btn-ghost:hover {
+	opacity: 0.62;
+}
+
+/* ─── Typography helpers ─────────────────────────────── */
+
+.kicker {
+	margin: 0 0 clamp(0.85rem, 1.6vh, 1.2rem);
+	font-size: clamp(0.95rem, 0.5vw + 0.8rem, 1.12rem);
+	font-weight: 600;
+	letter-spacing: 0.055em;
+	text-transform: uppercase;
+}
+
+.display {
+	margin: 0;
+	font-weight: 500;
+	font-size: clamp(2.1rem, 4.6vw, 4.25rem);
+	line-height: 1.08;
+	letter-spacing: -0.02em;
+}
+
+.lede {
+	margin: 0;
+	max-width: 42ch;
+	font-weight: 300;
+	font-size: clamp(1.02rem, 0.4vw + 0.95rem, 1.18rem);
+	line-height: 1.62;
+}
+
+.section {
+	padding-top: clamp(4rem, 9vh, 7.5rem);
+	padding-bottom: clamp(4rem, 9vh, 7.5rem);
+	scroll-margin-top: 5rem;
+}
+
+.section-title {
+	margin: 0;
+	font-weight: 500;
+	font-size: clamp(1.85rem, 2.8vw, 3.1rem);
+	line-height: 1.12;
+	letter-spacing: -0.02em;
+}
+
+.section-lead {
+	margin: clamp(0.85rem, 1.6vh, 1.2rem) 0 0;
+	max-width: 42ch;
+	font-weight: 300;
+	line-height: 1.62;
+}
+
+/* ─── Hero ───────────────────────────────────────────── */
+
+.hero {
+	position: relative;
+	isolation: isolate;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	min-height: calc(100svh - 4.5rem);
+	overflow: hidden;
+	padding-top: clamp(2rem, 6vh, 4.5rem);
+	padding-bottom: clamp(3rem, 8vh, 5.5rem);
+}
+
+.hero > video {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	pointer-events: none;
+	max-width: none;
+}
+
+/* Utility classes applied directly on the video element */
+.w-full  { width: 100%; }
+.h-full  { height: 100%; }
+.object-cover { object-fit: cover; }
+.scale-105 { transform: scale(1.05); }
+.transition-transform { transition-property: transform; }
+.duration-1000 { transition-duration: 1000ms; }
+
+.hero-inner {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+.hero-copy .display {
+	animation: rise-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+	animation-delay: 0.08s;
+}
+
+.hero-copy .lede {
+	margin-top: clamp(1.15rem, 2.4vh, 1.9rem);
+	animation: rise-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+	animation-delay: 0.18s;
+}
+
+.hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	margin-top: clamp(1.5rem, 3vh, 2.25rem);
+	animation: rise-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+	animation-delay: 0.28s;
+}
+
+.hero-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: clamp(1.5rem, 4vw, 3.5rem);
+	margin-top: clamp(2.5rem, 6vh, 4rem);
+	padding: 0;
+	list-style: none;
+}
+
+.hero-stats li {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	min-width: 5.5rem;
+	animation: rise-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-stats li:nth-child(1) { animation-delay: 0.36s; }
+.hero-stats li:nth-child(2) { animation-delay: 0.44s; }
+.hero-stats li:nth-child(3) { animation-delay: 0.52s; }
+
+.stat-value {
+	font-weight: 600;
+	font-size: clamp(1.35rem, 1.8vw, 1.75rem);
+	line-height: 1;
+}
+
+.stat-label {
+	font-weight: 400;
+	opacity: 0.78;
+}
+
+/* ─── Pivot / teaser ─────────────────────────────────── */
+
+.pivot .display {
+	max-width: 16ch;
+}
+
+/* ─── How it works steps ─────────────────────────────── */
+
+.steps {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: clamp(1rem, 2vw, 1.5rem);
+	margin-top: clamp(2rem, 4.5vh, 3rem);
+}
+
+.step-card {
+	border: 1px solid rgba(23, 90, 103, 0.7);
+	background: rgba(255, 255, 255, 0.28);
+	border-radius: 18px;
+	box-shadow: 0 10px 28px rgba(23, 90, 103, 0.06);
+	padding: clamp(1.15rem, 2.2vw, 1.6rem);
+}
+
+.step-emoji {
+	margin: 0 0 1rem;
+	font-size: 1.45rem;
+	line-height: 1;
+}
+
+.step-index {
+	margin: 0 0 0.55rem;
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.055em;
+	text-transform: uppercase;
+}
+
+.step-card h3 {
+	margin: 0 0 0.55rem;
+	font-size: 1.05rem;
+	font-weight: 600;
+}
+
+.step-card p {
+	margin: 0;
+	line-height: 1.5;
+}
+
+/* ─── Partner / feature split ────────────────────────── */
+
+.partner-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+	gap: clamp(1.5rem, 4vw, 3.5rem);
+	align-items: start;
+	margin-top: clamp(2rem, 4.5vh, 3rem);
+	min-width: 0;
+	max-width: 100%;
+}
+
+.check-list {
+	list-style: none;
+	margin: clamp(1.35rem, 3vh, 2rem) 0 0;
+	padding: 0;
+	display: grid;
+	gap: 0.7rem;
+}
+
+.check-list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.7rem;
+}
+
+.check-list svg {
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+	margin-top: 0.15rem;
+}
+
+/* ─── Chat / AI panels ───────────────────────────────── */
+
+.panel {
+	border: 1px solid rgba(23, 90, 103, 0.7);
+	background: rgba(255, 255, 255, 0.26);
+	border-radius: 18px;
+	box-shadow: 0 10px 28px rgba(23, 90, 103, 0.06);
+	min-width: 0;
+	max-width: 100%;
+}
+
+.chat-card {
+	overflow: hidden;
+	min-width: 0;
+	max-width: 100%;
+}
+
+.chat-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: 0.9rem 1.15rem;
+	border-bottom: 1px solid var(--ink);
+	font-size: 0.82rem;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.chat-status {
+	display: flex;
+	align-items: center;
+	gap: 0.45rem;
+	font-weight: 500;
+}
+
+.chat-status::before {
+	content: "";
+	width: 0.45rem;
+	height: 0.45rem;
+	background: var(--ink);
+	border-radius: 50%;
+}
+
+.chat-body {
+	display: grid;
+	gap: 1rem;
+	padding: 1.15rem;
+}
+
+.chat-row {
+	display: grid;
+	grid-template-columns: 1.7rem minmax(0, 1fr);
+	gap: 0.7rem;
+	align-items: start;
+}
+
+.chat-row p,
+.chat-row pre {
+	margin: 0;
+}
+
+.avatar {
+	display: grid;
+	place-items: center;
+	width: 1.7rem;
+	height: 1.7rem;
+	border: 1px solid rgba(23, 90, 103, 0.7);
+	border-radius: 10px;
+	font-size: 0.7rem;
+	font-weight: 600;
+}
+
+.chat-user .avatar {
+	background: var(--ink);
+	color: var(--cream);
+}
+
+.ascii {
+	margin: 0.65rem 0 0;
+	padding: 0.75rem 0.85rem;
+	border: 1px solid rgba(23, 90, 103, 0.6);
+	background: rgba(234, 227, 222, 0.55);
+	border-radius: 14px;
+	font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+	font-size: clamp(0.62rem, 0.7vw, 0.78rem);
+	line-height: 1.45;
+	overflow-x: auto;
+	white-space: pre;
+	min-width: 0;
+	max-width: 100%;
+}
+
+.chat-compose {
+	margin: 0 1.15rem 1.15rem;
+	padding: 0.85rem 1rem;
+	border: 1px solid rgba(23, 90, 103, 0.6);
+	background: rgba(234, 227, 222, 0.55);
+	border-radius: 14px;
+	color: var(--ink-soft);
+	opacity: 0.85;
+}
+
+/* ─── Session grid (brainstorm) ──────────────────────── */
+
+.session-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: clamp(1rem, 2vw, 1.5rem);
+	margin-top: clamp(2rem, 4.5vh, 3rem);
+	min-width: 0;
+	max-width: 100%;
+}
+
+.session-card .chat-head {
+	align-items: flex-start;
+}
+
+.session-label {
+	display: block;
+	margin-bottom: 0.2rem;
+	font-weight: 500;
+	letter-spacing: 0;
+	text-transform: none;
+	font-size: var(--fs-nav);
+}
+
+.session-sub {
+	font-weight: 400;
+	letter-spacing: 0;
+	text-transform: none;
+	opacity: 0.78;
+}
+
+/* ─── Compare grid ───────────────────────────────────── */
+
+.compare-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(1rem, 2vw, 1.5rem);
+	margin-top: clamp(2rem, 4.5vh, 3rem);
+}
+
+.compare-card {
+	border: 1px solid rgba(23, 90, 103, 0.7);
+	background: rgba(255, 255, 255, 0.26);
+	border-radius: 18px;
+	box-shadow: 0 10px 28px rgba(23, 90, 103, 0.06);
+	padding: clamp(1.15rem, 2.2vw, 1.6rem);
+}
+
+.compare-brand-icon {
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	margin: 0 0 1rem;
+	color: var(--ink);
+	flex-shrink: 0;
+}
+
+.compare-card h3 {
+	margin: 0 0 0.55rem;
+	font-size: 1.05rem;
+	font-weight: 600;
+}
+
+.compare-card p {
+	margin: 0;
+	line-height: 1.5;
+}
+
+.compare-row {
+	display: grid;
+	grid-template-columns: 1.1rem minmax(0, 1fr);
+	gap: 0.55rem;
+	margin-top: 0.7rem;
+	align-items: start;
+}
+
+.compare-row:first-of-type {
+	margin-top: 1rem;
+}
+
+/* ─── CTA section ────────────────────────────────────── */
+
+.cta-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.cta-copy {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 32rem;
+}
+
+.cta-section .kicker,
+.cta-section .section-title,
+.cta-section .section-lead {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cta-section .section-lead {
+	max-width: 38ch;
+}
+
+.cta-copy .subscribe {
+	margin-top: clamp(1.35rem, 3vh, 2rem);
+	width: 100%;
+	max-width: 380px;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+
+@media (max-width: 1100px) {
+	.header-note {
+		display: none;
+	}
+
+	.steps,
+	.session-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.partner-layout {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 720px) {
+	.header-nav {
+		display: none;
+	}
+
+	.header-cta .btn {
+		width: auto;
+		min-height: 2.5rem;
+		padding: 0.5rem 0.75rem;
+		font-size: 0.85rem;
+	}
+
+	.hero-actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.hero-actions .btn,
+	.hero-actions .btn-ghost {
+		width: 100%;
+		min-height: 2.75rem;
+		padding: 0.85rem 1.15rem;
+	}
+
+	.hero-stats {
+		width: 100%;
+		gap: 1.15rem 1.5rem;
+	}
+
+	.hero-stats li {
+		min-width: 0;
+	}
+
+	.hero-copy .display,
+	.lede,
+	.section-lead {
+		max-width: 34ch;
+	}
+
+	.steps,
+	.compare-grid,
+	.session-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 440px) {
+	.hero-copy .display,
+	.lede,
+	.section-lead {
+		max-width: none;
+	}
+
+	.header-inner {
+		flex-wrap: wrap;
+		gap: 0.65rem 0.75rem;
+	}
+
+	.header-cta {
+		margin-left: auto;
+	}
+
+	.header-cta .btn {
+		padding: 0.45rem 0.7rem;
+		font-size: 0.8rem;
+	}
+
+	.hero-actions {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.hero-actions .btn,
+	.hero-actions .btn-ghost {
+		width: 100%;
+	}
+}
+
+@media (max-width: 359px) {
+	.hero-stats {
+		flex-direction: column;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero > video {
+		display: none;
+	}
+
+	.scale-105 {
+		transform: none;
+	}
+
+	.hero-copy .display,
+	.hero-copy .lede,
+	.hero-actions,
+	.hero-stats li {
+		animation: none;
+	}
+}

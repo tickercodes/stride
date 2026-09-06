@@ -1,0 +1,336 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+	<Header />
+	<main id="top">
+		<section class="hero">
+				<video
+					class="transition-transform duration-1000"
+					style="height: 100%; width: 100%; object-fit: cover; object-position: left center;"
+					src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260518_003132_8b7edcb6-c64d-4a52-a9ca-879942e122ad.mp4"
+					autoPlay
+					loop
+					muted
+					playsInline
+				></video>
+			<div class="wrap hero-inner">
+				<div class="hero-copy">
+					<h1 class="display">Stay interview-ready.<br />10 minutes a day.</h1>
+					<p class="lede">
+						AI-powered daily interview prep for software engineers. One personalized concept every
+						day — adapted to your level, your pace, your goals.
+					</p>
+					<div class="hero-actions">
+						<a class="btn" href="#join">Join Early Access</a>
+						<a class="btn-ghost" href="#how-it-works">See how it works</a>
+					</div>
+				</div>
+				<ul class="hero-stats">
+					<li>
+						<span class="stat-value">20 min</span>
+						<span class="stat-label">per day</span>
+					</li>
+					<li>
+						<span class="stat-value">6+</span>
+						<span class="stat-label">topics</span>
+					</li>
+					<li>
+						<span class="stat-value">AI</span>
+						<span class="stat-label">personalized</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="section pivot wrap">
+			<h2 class="display">What if you never had to cram again?</h2>
+		</section>
+
+		<section class="section wrap" id="how-it-works" aria-labelledby="how-title">
+			<p class="kicker">The habit</p>
+			<h2 class="section-title" id="how-title">How Stride works</h2>
+			<p class="section-lead">A daily habit that keeps you sharp — not a last-minute grind.</p>
+			<div class="steps">
+				<article class="step-card">
+					<p class="step-emoji">🎯</p>
+					<p class="step-index">Step 01</p>
+					<h3>Set your path</h3>
+					<p>
+						Pick your topics — DSA, System Design, LLD, or drop your own book like DDIA. Set your
+						level and daily time.
+					</p>
+				</article>
+				<article class="step-card">
+					<p class="step-emoji">🧠</p>
+					<p class="step-index">Step 02</p>
+					<h3>Learn daily</h3>
+					<p>
+						Get one personalized concept every day. Stride’s AI brainstorms with you using ASCII
+						diagrams, real scenarios — like talking to a senior engineer.
+					</p>
+				</article>
+				<article class="step-card">
+					<p class="step-emoji">📈</p>
+					<p class="step-index">Step 03</p>
+					<h3>Get evaluated</h3>
+					<p>
+						The AI probes your thinking first, not just your answer. It adapts — got it right? Bar
+						goes up. Struggled? Next session starts more foundational.
+					</p>
+				</article>
+				<article class="step-card">
+					<p class="step-emoji">🏆</p>
+					<p class="step-index">Step 04</p>
+					<h3>Track your readiness</h3>
+					<p>
+						See your streaks, readiness score, skill breakdown, and achievements. Know exactly where
+						you stand for your next interview.
+					</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section wrap" id="features" aria-labelledby="partner-title">
+			<p class="kicker">Your AI interview partner</p>
+			<div class="partner-layout">
+				<div>
+					<h2 class="section-title" id="partner-title">Not a quiz app.<br />A thinking partner.</h2>
+					<p class="section-lead">
+						Stride doesn't just ask "What is a B-Tree?" — it gives you a real scenario and probes
+						how you think. Like practicing with a senior engineer who adapts to your level.
+					</p>
+					<ul class="check-list">
+						<li>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
+							<span>Probes your approach before giving answers</span>
+						</li>
+						<li>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
+							<span>Uses ASCII diagrams &amp; real-world scenarios</span>
+						</li>
+						<li>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
+							<span>Adapts difficulty based on your performance</span>
+						</li>
+						<li>
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
+							<span>Bring your own material (DDIA, books, notes)</span>
+						</li>
+					</ul>
+				</div>
+				<div class="panel chat-card">
+					<div class="chat-head">
+						<span>Stride AI</span>
+						<span class="chat-status">Session active</span>
+					</div>
+					<div class="chat-body">
+						<div class="chat-row">
+							<span class="avatar">S</span>
+							<p>
+								You work at a company serving millions of podcast episodes. A user searches for a
+								specific episode. How do you think the app finds it?
+							</p>
+						</div>
+						<div class="chat-row chat-user">
+							<span class="avatar">You</span>
+							<p>I think it uses a balanced tree to narrow down the search space...</p>
+						</div>
+						<div class="chat-row">
+							<span class="avatar">S</span>
+							<div>
+								<p>Exactly! That's a B-Tree. Let me draw it out:</p>
+								<pre class="ascii">{`       [  30  |  60  ]
+      /        |        \\
+ [10,20]   [40,50]   [70,80]`}</pre>
+							</div>
+						</div>
+					</div>
+					<p class="chat-compose">Share your thinking...</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="section wrap" aria-labelledby="brainstorm-title">
+			<p class="kicker">Like having a senior engineer on speed dial</p>
+			<h2 class="section-title" id="brainstorm-title">AI that brainstorms with you</h2>
+			<p class="section-lead">
+				Drop any book, any topic — Stride turns it into an interactive session with diagrams,
+				follow-up questions, and real understanding.
+			</p>
+			<div class="session-grid">
+				<article class="panel chat-card session-card">
+					<div class="chat-head">
+						<div>
+							<span class="session-label">📖 Brainstorming from DDIA</span>
+							<span class="session-sub">Chapter 3 — Storage &amp; Retrieval</span>
+						</div>
+					</div>
+					<div class="chat-body">
+						<div class="chat-row">
+							<span class="avatar">S</span>
+							<p>
+								The book mentions LSM-trees vs B-trees. Let's think about this — you have a
+								write-heavy analytics DB getting 50K inserts/sec. Which storage engine do you pick
+								and why?
+							</p>
+						</div>
+						<div class="chat-row chat-user">
+							<span class="avatar">You</span>
+							<p>
+								LSM-tree because writes go to an in-memory memtable first, so they're super fast...
+							</p>
+						</div>
+						<div class="chat-row">
+							<span class="avatar">S</span>
+							<div>
+								<p>Good instinct! Let me draw how it works:</p>
+								<pre class="ascii">{`  Write ──▶ [Memtable (RAM)]
+               │ (full)
+               ▼
+         [SSTable L0] ──merge──▶ [SSTable L1]
+               │                      │
+          sorted run            sorted run
+               └── compaction ────────┘`}</pre>
+								<p>Now the trade-off: what happens to read latency as SSTables pile up?</p>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="panel chat-card session-card">
+					<div class="chat-head">
+						<div>
+							<span class="session-label">🏗️ System Design Session</span>
+							<span class="session-sub">Designing a notification service</span>
+						</div>
+					</div>
+					<div class="chat-body">
+						<div class="chat-row">
+							<span class="avatar">S</span>
+							<p>
+								Your e-commerce app sends push, email, and SMS. During a flash sale, you need to send
+								10M notifications in under 5 minutes. Walk me through your architecture.
+							</p>
+						</div>
+						<div class="chat-row chat-user">
+							<span class="avatar">You</span>
+							<p>
+								I'd use a message queue like Kafka, with separate consumers for each channel...
+							</p>
+						</div>
+						<div class="chat-row">
+							<span class="avatar">S</span>
+							<div>
+								<p>Solid start! Here's the skeleton:</p>
+								<pre class="ascii">{`  API ──▶ [Priority Queue]
+              │
+    ┌─────────┼─────────┐
+    ▼         ▼         ▼
+ [Push]    [Email]    [SMS]
+ worker    worker    worker
+    │         │         │
+   APNs    SendGrid  Twilio`}</pre>
+								<p>
+									What if the SMS provider rate-limits you to 1K/sec? How do you still hit the 5-min
+									SLA?
+								</p>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="section wrap" id="different" aria-labelledby="different-title">
+			<p class="kicker">The difference</p>
+			<h2 class="section-title" id="different-title">Why Stride is different</h2>
+			<div class="compare-grid">
+				<article class="compare-card">
+					<!-- LeetCode icon -->
+					<svg class="compare-brand-icon" viewBox="0 0 95 111" fill="currentColor" aria-label="LeetCode" role="img">
+						<path d="M68.4 74.6c2.9 2.9 2.9 7.7 0 10.6l-5.6 5.6c-2.9 2.9-7.7 2.9-10.6 0L14.5 53.1c-2.9-2.9-2.9-7.7 0-10.6l5.6-5.6c2.9-2.9 7.7-2.9 10.6 0L68.4 74.6z"/>
+						<path d="M26.7 36.3c-2.9-2.9-2.9-7.7 0-10.6l5.6-5.6c2.9-2.9 7.7-2.9 10.6 0l37.7 37.7c2.9 2.9 2.9 7.7 0 10.6l-5.6 5.6c-2.9 2.9-7.7 2.9-10.6 0L26.7 36.3z"/>
+						<path d="M22 55.5h51c4.1 0 7.5 3.4 7.5 7.5s-3.4 7.5-7.5 7.5H22c-4.1 0-7.5-3.4-7.5-7.5S17.9 55.5 22 55.5z"/>
+					</svg>
+					<h3>vs LeetCode</h3>
+					<div class="compare-row">
+						<span>✕</span>
+						<p>Grinding 500 problems you'll forget</p>
+					</div>
+					<div class="compare-row">
+						<span>✓</span>
+						<p>1 concept/day you actually internalize</p>
+					</div>
+				</article>
+				<article class="compare-card">
+					<!-- YouTube icon -->
+					<svg class="compare-brand-icon" viewBox="0 0 24 24" fill="currentColor" aria-label="YouTube" role="img">
+						<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+					</svg>
+					<h3>vs YouTube</h3>
+					<div class="compare-row">
+						<span>✕</span>
+						<p>Passively watching 4-hour tutorials</p>
+					</div>
+					<div class="compare-row">
+						<span>✓</span>
+						<p>Active brainstorming — you do the thinking</p>
+					</div>
+				</article>
+				<article class="compare-card">
+					<!-- ChatGPT / OpenAI icon -->
+					<svg class="compare-brand-icon" viewBox="0 0 41 41" fill="currentColor" aria-label="ChatGPT" role="img">
+						<path d="M37.5 16.6a10.2 10.2 0 0 0-.9-8.4 10.4 10.4 0 0 0-11.2-5 10.2 10.2 0 0 0-7.7-3.4 10.4 10.4 0 0 0-9.9 7.2 10.2 10.2 0 0 0-6.8 4.9 10.4 10.4 0 0 0 1.3 12.2 10.2 10.2 0 0 0 .9 8.4 10.4 10.4 0 0 0 11.2 5 10.2 10.2 0 0 0 7.7 3.4 10.4 10.4 0 0 0 9.9-7.2 10.2 10.2 0 0 0 6.8-4.9 10.4 10.4 0 0 0-1.3-12.2zm-15.4 21.6a7.7 7.7 0 0 1-4.9-1.8l.2-.1 8.2-4.7a1.4 1.4 0 0 0 .7-1.2V19.3l3.4 2a.1.1 0 0 1 .1.1v9.5a7.7 7.7 0 0 1-7.7 7.3zM5.4 31.3a7.7 7.7 0 0 1-.9-5.2l.2.1 8.2 4.7a1.4 1.4 0 0 0 1.4 0l10-5.8v4a.1.1 0 0 1-.1.1l-8.3 4.8a7.7 7.7 0 0 1-10.5-2.7zm-1.6-17a7.7 7.7 0 0 1 4-3.4v9.6a1.4 1.4 0 0 0 .7 1.2l10 5.8-3.5 2a.1.1 0 0 1-.1 0L6.6 25a7.7 7.7 0 0 1-2.8-10.7zm28.3 6.6-10-5.8 3.5-2a.1.1 0 0 1 .1 0l8.3 4.8a7.7 7.7 0 0 1-1.2 13.9v-9.6a1.4 1.4 0 0 0-.7-1.3zm3.5-5.2-.2-.1-8.2-4.7a1.4 1.4 0 0 0-1.4 0l-10 5.8v-4a.1.1 0 0 1 .1-.1l8.3-4.8a7.7 7.7 0 0 1 11.4 8zm-21.7 7.1-3.5-2a.1.1 0 0 1-.1-.1v-9.5a7.7 7.7 0 0 1 12.6-5.9l-.2.1-8.2 4.7a1.4 1.4 0 0 0-.7 1.2l.1 11.5zm1.9-4.1 4.5-2.6 4.5 2.6v5.1l-4.5 2.6-4.5-2.6V18.7z"/>
+					</svg>
+					<h3>vs ChatGPT</h3>
+					<div class="compare-row">
+						<span>✕</span>
+						<p>One-off answers with no memory</p>
+					</div>
+					<div class="compare-row">
+						<span>✓</span>
+						<p>Tracks your progress across 100+ sessions</p>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="section wrap cta-section" id="join" aria-labelledby="join-title">
+			<p class="kicker">Limited spots available</p>
+			<div class="cta-copy">
+				<h2 class="section-title" id="join-title">Join Early Access</h2>
+				<p class="section-lead">
+					Free for the first 100 users. No credit card. Just sign up and start your daily prep.
+				</p>
+				<form class="subscribe" action="#join" method="get">
+					<label class="sr-only" for="ea-email">Email address</label>
+					<input
+						id="ea-email"
+						type="email"
+						name="email"
+						placeholder="Leave your email"
+						autocomplete="email"
+						required
+					/>
+					<button type="submit" aria-label="Subscribe">
+						<svg
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path d="M4 12h15M13 6l6 6-6 6"></path>
+						</svg>
+					</button>
+				</form>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
