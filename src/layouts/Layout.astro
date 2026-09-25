@@ -11,12 +11,16 @@ const { title = 'Stride — Stay interview-ready.' } = Astro.props;
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta name="theme-color" content="#EAE3DE" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+		<link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 		<meta name="generator" content={Astro.generator} />
 		<meta
 			name="description"
-			content="AI-powered daily interview prep for software engineers. One personalized concept every day — adapted to your level, your pace, your goals."
+			content="AI-powered daily interview prep for software engineers. One personalized concept every day adapted to your level, your pace, your goals."
 		/>
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />

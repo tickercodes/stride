@@ -266,6 +266,25 @@
 	height: 22px;
 }
 
+.subscribe-status {
+	margin: 0.65rem 0 0;
+	font-size: 0.85rem;
+	line-height: 1.45;
+}
+
+.subscribe-status[data-state='success'] {
+	color: var(--ink);
+}
+
+.subscribe-status[data-state='error'] {
+	color: #7a3030;
+}
+
+.subscribe-status[data-state='pending'] {
+	color: var(--ink-soft);
+	opacity: 0.85;
+}
+
 .footer-bottom {
 	margin-top: auto;
 	padding-top: clamp(2.5rem, 6vh, 4.5rem);

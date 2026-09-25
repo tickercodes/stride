@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
 ---
 
 <Layout>
@@ -25,13 +26,13 @@ import Footer from '../components/Footer.astro';
 						day — adapted to your level, your pace, your goals.
 					</p>
 					<div class="hero-actions">
-						<a class="btn" href="#join">Join Early Access</a>
+						<a class="btn" href="#join">Get Started</a>
 						<a class="btn-ghost" href="#how-it-works">See how it works</a>
 					</div>
 				</div>
 				<ul class="hero-stats">
 					<li>
-						<span class="stat-value">20 min</span>
+						<span class="stat-value">10 min</span>
 						<span class="stat-label">per day</span>
 					</li>
 					<li>
@@ -301,34 +302,11 @@ import Footer from '../components/Footer.astro';
 		<section class="section wrap cta-section" id="join" aria-labelledby="join-title">
 			<p class="kicker">Limited spots available</p>
 			<div class="cta-copy">
-				<h2 class="section-title" id="join-title">Join Early Access</h2>
+				<h2 class="section-title" id="join-title">Get Started</h2>
 				<p class="section-lead">
-					Free for the first 100 users. No credit card. Just sign up and start your daily prep.
+					Get 3 months free access (only for the first 100 users). No credit card. Just sign up and start your daily prep.
 				</p>
-				<form class="subscribe" action="#join" method="get">
-					<label class="sr-only" for="ea-email">Email address</label>
-					<input
-						id="ea-email"
-						type="email"
-						name="email"
-						placeholder="Leave your email"
-						autocomplete="email"
-						required
-					/>
-					<button type="submit" aria-label="Subscribe">
-						<svg
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.8"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							aria-hidden="true"
-						>
-							<path d="M4 12h15M13 6l6 6-6 6"></path>
-						</svg>
-					</button>
-				</form>
+				<SubscribeForm inputId="ea-email" source="cta" />
 			</div>
 		</section>
 	</main>

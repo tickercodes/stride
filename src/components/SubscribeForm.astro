@@ -1,0 +1,100 @@
+---
+interface Props {
+	inputId: string;
+	source: 'cta' | 'footer';
+}
+
+const { inputId, source } = Astro.props;
+const endpoint = import.meta.env.PUBLIC_GOOGLE_SCRIPT_URL ?? '';
+---
+
+<form
+	class="subscribe"
+	data-subscribe-form
+	data-source={source}
+	data-endpoint={endpoint}
+>
+	<label class="sr-only" for={inputId}>Email address</label>
+	<input
+		id={inputId}
+		type="email"
+		name="email"
+		placeholder="Sign up with email"
+		autocomplete="email"
+		required
+	/>
+	<button type="submit" aria-label="Subscribe">
+		<svg
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.8"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<path d="M4 12h15M13 6l6 6-6 6"></path>
+		</svg>
+	</button>
+</form>
+<p class="subscribe-status" data-subscribe-status hidden aria-live="polite"></p>
+
+<script>
+	const forms = document.querySelectorAll<HTMLFormElement>('[data-subscribe-form]');
+
+	forms.forEach((form) => {
+		const status = form.nextElementSibling as HTMLParagraphElement | null;
+		const endpoint = form.dataset.endpoint ?? '';
+		const source = form.dataset.source ?? 'unknown';
+		const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+		const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement | null;
+
+		form.addEventListener('submit', async (event) => {
+			event.preventDefault();
+
+			if (!emailInput || !submitButton) return;
+
+			const email = emailInput.value.trim();
+			if (!email) return;
+
+			if (!endpoint) {
+				showStatus(status, 'Signup is not configured yet. Add PUBLIC_GOOGLE_SCRIPT_URL.', 'error');
+				return;
+			}
+
+			submitButton.disabled = true;
+			showStatus(status, 'Registering…', 'pending');
+
+			try {
+				const body = new URLSearchParams();
+				body.set('email', email);
+				body.set('source', source);
+
+				await fetch(endpoint, {
+					method: 'POST',
+					mode: 'no-cors',
+					headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+					body: body.toString(),
+				});
+
+				emailInput.value = '';
+				showStatus(status, "You're on the list. We'll reach out soon.", 'success');
+			} catch {
+				showStatus(status, 'Something went wrong. Please try again.', 'error');
+			} finally {
+				submitButton.disabled = false;
+			}
+		});
+	});
+
+	function showStatus(
+		el: HTMLParagraphElement | null,
+		message: string,
+		state: 'success' | 'error' | 'pending',
+	) {
+		if (!el) return;
+		el.hidden = false;
+		el.textContent = message;
+		el.dataset.state = state;
+	}
+</script>
